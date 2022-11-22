@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Genericvalidations Jquery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    .error{
+      color: red;
+    }
+    .input{
+      outline: 2px solid #ccc;;
+    }
+    .input:invalid {
+      outline: 2px solid #f00;
+    }
+  </style>
+  <script src="./assets/js/validation1.js"></script>  
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h2><center>Generic validation Form</center></h2>
+          <form name="myform" method="post"  onsubmit="return false" style=" border: 4px solid gray;padding: 30px;">
+            <div class="mb-3 mt-3">
+              <div class="card border-success mb-3" style="display: none; border: 3px solid darkgreen; text-decoration-color: blue;" id="card1">
+            <div class="card-body text-success">
+            <h4 class="card-title">Form successfully submitted..</h4>
+            </div>
+            </div>
+          
+              <label>Name:</label>
+              <input type="text" class="form-control input"  placeholder="Enter name" name="name" id="name">
+              <p id="uname" class="error"></p>
+            </div>
+            <div class="mb-3 mt-3">
+              <label>Date of Birth:</label>
+              <input type="date" class="form-control input" placeholder="Enter date of birth" name="birth" id="birth">
+              <p id="uage" class="error"></p>
+            </div>
+            <div class="mb-3 mt-3">
+              <label>Email:</label>
+              <input type="email" class="form-control input" placeholder="Enter email" name="email" id="email">
+              <p id="uemail" class="error"></p>
+            </div>
+            <div class="mb-3 mt-3">
+              <label> Phone Number:</label>
+              <input type="number" class="form-control input" id="pnumber" placeholder="Enter phone number" name="pnumber" minlength="10" maxlength="10">
+              <p id="upnumber" class="error"></p>
+            </div>
+            <div class="mb-3 mt-3" id="gender">
+              <label> Gender:</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+              <p id="ugender" class="error"></p>
+            </div>
+            <label for="country">Country:</label>
+            <select class="form-select" name="country" id="country">
+                <option value="">Select your country</option>
+              <option>Afghanistan</option>
+              <option>Australia</option>
+              <option>Belize</option>
+              <option>Canada</option>
+              <option>China</option>
+              <option>France</option>
+              <option>India</option>
+              <option>Pakistan</option>
+              <option>Sri Lanka</option>
+            </select>
+            <p id="countryerr" class="error"></p>
+            <div class="form-check" id="check">
+              <input type="checkbox" name="myCheck">
+              <label for="myCheck">Agree to Privacy Policy:</label> 
+              <p id="text" class="error"></p>
+            </div>
+            <div style="text-align:right;">
+              <button type="submit" class="btn btn-primary" onclick="validateForm()">Submit</button>
+            </div>
+          </form>
+           
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
